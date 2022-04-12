@@ -92,5 +92,3 @@ StyleDictionary.extend({
 		}
 	}
 });
-
-export default StyleDictionary;
