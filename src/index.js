@@ -51,44 +51,44 @@ StyleDictionary.registerFilter({
 	}
 });
 
-StyleDictionary.extend({
-	source: ['resources/figma-tokens/**/*.tokens.json'],
-	platforms: {
-		scss: {
-			transformGroup: 'scss',
-			transforms: [
-				'spacer/rem',
-				'font-weights/number',
-				'attribute/cti',
-				'name/cti/kebab',
-				'time/seconds',
-				'content/icon',
-				'size/rem',
-				'color/css'
-			],
-			buildPath: 'resources/styles/style-dictionary/',
-			prefix: 'token',
-			files: [
-				{
-					destination: '_colors.scss',
-					format: 'css/variables',
-					filter: {
-						type: 'color'
-					}
-				},
-				{
-					destination: '_typography.scss',
-					format: 'css/variables',
-					filter: 'filter-typography'
-				},
-				{
-					destination: '_spacers.scss',
-					format: 'css/variables',
-					filter: {
-						type: 'spacing'
-					}
-				}
-			]
-		}
-	}
+module.exports = StyleDictionary.extend({
+  source: ['resources/figma-tokens/**/*.tokens.json'],
+  platforms: {
+    scss: {
+      transformGroup: 'scss',
+      transforms: [
+        'spacer/rem',
+        'font-weights/number',
+        'attribute/cti',
+        'name/cti/kebab',
+        'time/seconds',
+        'content/icon',
+        'size/rem',
+        'color/css'
+      ],
+      buildPath: 'resources/styles/style-dictionary/',
+      prefix: 'token',
+      files: [
+        {
+          destination: '_colors.scss',
+          format: 'css/variables',
+          filter: {
+            type: 'color'
+          }
+        },
+        {
+          destination: '_typography.scss',
+          format: 'css/variables',
+          filter: 'filter-typography'
+        },
+        {
+          destination: '_spacers.scss',
+          format: 'css/variables',
+          filter: {
+            type: 'spacing'
+          }
+        }
+      ]
+    }
+  }
 });
