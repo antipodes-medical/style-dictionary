@@ -1,0 +1,24 @@
+{
+  "name": "@antipodes-medical/NOM-DU-PACKAGE",
+  "version": "VERSION-DU-PACKAGE",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint '**/*.js'",
+    "eslint:fix": "./node_modules/.bin/eslint '**/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antipodes-medical/NOM-DU-PACKAGE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antipodes-medical/NOM-DU-PACKAGE/issues"
+  },
+  "homepage": "https://github.com/antipodes-medical/NOM-DU-PACKAGE#readme",
+  "description": "",
+  "devDependencies": {
+    "@antipodes-medical/eslint-config-antipodes": "^1.0.5"
+  }
+}
