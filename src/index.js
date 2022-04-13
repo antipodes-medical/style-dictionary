@@ -66,7 +66,7 @@ module.exports = StyleDictionary.extend({
         'size/rem',
         'color/css'
       ],
-      buildPath: 'resources/styles/style-dictionary/',
+      buildPath: 'resources/style-dictionary/',
       prefix: 'token',
       files: [
         {
