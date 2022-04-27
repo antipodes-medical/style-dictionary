@@ -153,6 +153,45 @@ StyleDictionary.registerFormat({
   }
 });
 
+StyleDictionary.registerFormat({
+  name: `css/variables/other`,
+  formatter: function ({dictionary}) {
+    let output = `/**
+* Do not edit directly
+*/
+
+:root {\n`;
+
+    output += dictionary.allTokens.map(token => {
+      let line = '';
+
+      const isFont = token.original.value.includes('typography');
+
+      if (isFont) {
+        const values = [
+          'font-family',
+          'font-weight',
+          'line-height',
+          'font-size',
+          'letter-spacing',
+          'paragraph-spacing',
+          'text-transform'
+        ];
+        const originalFont = `--token-${toKebabCase(token.original.value.substring(1, token.original.value.length - 1))}`;
+
+        values.forEach(value => {
+          line += `  --${token.name}-${value}: var(${originalFont}-${value});\n`;
+        });
+      }
+
+      return line;
+    }).join(`\n`);
+
+    output += `\n}\n`;
+    return output;
+  }
+});
+
 
 /**
  * Transform spacer to rem.
@@ -215,6 +254,13 @@ module.exports = StyleDictionary.extend({
           },
           options: {
             outputReferences: true
+          }
+        },
+        {
+          destination: '_other.scss',
+          format: 'css/variables/other',
+          filter: {
+            type: 'other'
           }
         }
       ]
