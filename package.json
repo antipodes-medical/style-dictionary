@@ -22,6 +22,6 @@
     "@antipodes-medical/eslint-config-antipodes": "^1.0.5"
   },
   "dependencies": {
-    "style-dictionary": "^3.7.0"
+    "style-dictionary": "^4.1.1"
   }
 }
